@@ -73,4 +73,4 @@ def login():
             return redirect(url_for('index'))
         else:
             loggedIN = "wrong credentials"
-    return render_template('login.html',loggedIN=loggedIN)
+    return render_template('login2.html',loggedIN=loggedIN)
