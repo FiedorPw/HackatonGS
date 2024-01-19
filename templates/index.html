@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Studenci  {% endblock %}</h1>
+    {% for student in students %}
+        <div class='student'>
+            <h3>#{{ student[0] }} - {{ student[1] }} {{ student[2] }}</h3>
+            <i><p>nr indeksu: {{ student[3] }}</p></i>
+            <i><p>Added: {{ student[4] }}</p></i>
+        </div>
+    {% endfor %}
+    {#  pobieramy info od użytkownika   #}
+
+    <form method="POST">
+        <h1>Znajdz studenta po imieniu</h1>
+        <input type="text" id="input_id" value="{{ imie }}" name="text">
+        <input type="submit" value="Get student's data">
+    </form>
+{#  output z bazy printujemy     #}
+      <h3>#{{ wyszukana_osoba[0] }} - {{ wyszukana_osoba[1] }} {{ wyszukana_osoba[2] }}</h3>
+      <i><p>nr indeksu: {{ wyszukana_osoba[3] }}</p></i>
+      <i><p>Added: {{ wyszukana_osoba[4] }}</p></i>
+{#                                                                                                                                                     <script>alert("xss!")</script>#}
+    <script>
+        function postComment() {
+            var userInput = document.getElementById("userInput").value;
+            var commentsContainer = document.getElementById("commentsContainer");
+
+            // Create a new paragraph for the comment
+            var newComment = document.createElement("p");
+            newComment.value = userInput;
+
+            // Append the new comment to the comments container
+            commentsContainer.appendChild(newComment);
+
+            // Clear the input field
+            document.getElementById("userInput").value = "";
+        }
+    </script>
+     <h2>Dodaj komendarz</h2>
+    <textarea id="userInput" ></textarea><br>
+    <button onclick="postComment()">Dodaj</button>
+
+    <div id="commentsContainer">
+        <!-- Comments will appear here -->
+    </div>
+
+
+{% endblock %}
