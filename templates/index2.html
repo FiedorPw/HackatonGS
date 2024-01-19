@@ -151,7 +151,7 @@
                 if (data.length !== lastMessageLength) {
                     const newMessages = data.slice(lastMessageLength);
                     newMessages.forEach(function(message) {
-                        $('#message-container').append('<div class="shadow">' + message + '</div>');
+                        $('#message-container').append('<div class="shadow p-3 mb-5 bg-body-tertiary rounded">' + message + '</div>');
                     });
                     lastMessageLength = data.length;
                 }
