@@ -71,20 +71,18 @@
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form> -->
-            <div class="nav-item mb-2 mb-lg-0">
-              <div class="input-group w-auto align-center">
-                <input type="file" class="form-control" id="inputFile" />
-              </div>
+          <div class="nav-item mb-2 mb-lg-0">
+            <div class="input-group w-auto align-center">
+              <input type="file" class="form-control" id="inputFile" />
             </div>
-            <span class="navbar-text mx-0 mx-lg-4"
-              >Hello, <strong>admin</strong>!</span
-            >
-            <a class="btn btn-primary" href="/login" role="button"
-              >Sign in</a
-            >
           </div>
+          <span class="navbar-text mx-0 mx-lg-4"
+            >Hello, <strong>admin</strong>!</span
+          >
+          <a class="btn btn-primary" href="/login" role="button">Sign in</a>
         </div>
-      </nav>
+      </div>
+    </nav>
 
     <!-- <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary">
         <p class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
@@ -215,20 +213,7 @@
                   background-repeat: no-repeat;
                   background-position: center;
                 "
-              >
-                <!-- <div class="d-flex justify-content-start w-50 text-break">
-                  <div class="d-flex shadow p-3 mt-4 bg-body-tertiary rounded text-start">
-                    <img
-                      src="../static/logo.png"
-                      width="30"
-                      height="30"
-                      class="align-items-center me-2"
-                      alt=""
-                    />
-                    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-                  </div>
-                </div> -->
-              </div>
+              ></div>
             </div>
             <div class="input-group mb-3">
               <input
@@ -258,9 +243,9 @@
       function fetchMessages() {
         $.getJSON("/get_messages", function (data) {
           console.log(data);
-          const newMessage = data.toString();
+          const newMessage = marked.parse(data.toString());
           $("#message-container").append(
-            '<div class="d-flex justify-content-start w-50 text-break"><div class="d-flex shadow p-3 mt-4 bg-body-tertiary rounded" style="text-align: justify;"><img src="../static/logo.png" width="30" height="30" class="align-items-center me-2" alt="">' +
+            '<div class="d-flex justify-content-start w-50 text-break"><div class="d-flex shadow p-3 mt-4 bg-body-tertiary rounded" style="text-align: justify"><img src="../static/logo.png" width="30" height="30" class="align-items-center me-2" alt="">' +
               newMessage +
               "</div></div>"
           );
@@ -273,7 +258,7 @@
             const message = $("#message-input").val();
             if (message != "") {
               $("#message-container").append(
-                '<div class="d-flex justify-content-end"><div class="shadow p-3 mt-4 bg-body-tertiary rounded">' +
+                '<div class="d-flex justify-content-end"><div class="shadow p-3 mt-4 bg-body-tertiary rounded markdown">' +
                   message +
                   "</div></div>"
               );
@@ -308,5 +293,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </body>
 </html>
