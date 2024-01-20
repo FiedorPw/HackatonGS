@@ -44,6 +44,7 @@ def get_files():
 def upload_file():
     file = request.files['file']
     logger.info(f'Received user file: {file.filename}')
+    file.save(os.path.join('uploads', file.filename))
     files.append(file.filename)
     return jsonify(success=True)
 
@@ -53,4 +54,6 @@ def login():
     return render_template('login.html')
 
 if __name__ == '__main__':
+    if not os.path.exists('uploads'):
+        os.mkdir('uploads')
     app.run(debug=True)

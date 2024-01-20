@@ -1,3 +1,7 @@
 # Exclude pycache files
 global-exclude __pycache__
 *.pyc
+
+# testing files
+test.py
+test.txt
