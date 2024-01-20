@@ -16,6 +16,7 @@ def get_messages():
 
 @app.route('/send_message', methods=['POST'])
 def send_message():
+    messages.clear()
     message = request.form['message']
     messages.append(message)
     print("request: " + str(request))
