@@ -133,7 +133,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Enter a prompt" id="message-input">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
+                        <button class="btn btn-primary" type="button" id="button-addon2">Submit</button>
                     </div>
                 </div>
             </div>
@@ -150,9 +150,25 @@
         $.getJSON('/get_messages', function(data) {  
                 console.log(data);
                 const newMessage = data.toString()
-                $('#message-container').append('<div class="d-flex justify-content-start"><div class="shadow p-3 mt-4 bg-body-tertiary rounded"><img src="../static/logo.png" width="30" height="30" class="align-items-center me-2" alt="">' + newMessage + '</div></div>');
+                $('#message-container').append('<div class="d-flex justify-content-start w-50 text-break"><div class="shadow p-3 mt-4 bg-body-tertiary rounded"><img src="../static/logo.png" width="30" height="30" class="align-items-center me-2" alt="">' + newMessage + '</div></div>');
         });
     }
+
+    $(document).ready(function(){
+      $("#message-input").on("keypress",function(e){
+        if(e.which==13){
+          const message = $("#message-input").val();
+          if(message != "")
+          {
+            $('#message-container').append('<div class="d-flex justify-content-end"><div class="shadow p-3 mt-4 bg-body-tertiary rounded">' + message + '</div></div>');
+            $("#message-input").val('');
+            $.post('/send_message',{message: message}, function(){
+            fetchMessages();
+          });
+        }
+        }
+      });
+    });
 
     $(document).ready(function(){
       $("#button-addon2").on("click",function(){
