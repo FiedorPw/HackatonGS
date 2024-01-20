@@ -1,3 +1,4 @@
+from distutils.command import upload
 from flask import Flask, jsonify, request, render_template
 import requests
 import logging
@@ -6,6 +7,7 @@ from utils.logger import CustomFormatter
 
 app = Flask(__name__)
 messages = []
+files = []
 
 # Logger setup
 log_level = 'INFO'
@@ -32,6 +34,17 @@ def send_message():
     logger.info(f'Received user message: {message}')
     response = requests.post('http://localhost:8000/assistant/', json={'user_id' : 1, 'message': message})
     messages.append(response.json()['message'])
+    return jsonify(success=True)
+
+@app.route('/get_files')
+def get_files():
+    return jsonify(files)
+
+@app.route('/upload_file', methods=['POST'])
+def upload_file():
+    file = request.files['file']
+    logger.info(f'Received user file: {file.filename}')
+    files.append(file.filename)
     return jsonify(success=True)
 
 @app.route('/login')
