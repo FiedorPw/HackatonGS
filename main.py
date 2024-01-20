@@ -6,6 +6,8 @@ app = Flask(__name__)
 os.environ['DB_USERNAME'] = 'admin'
 os.environ['DB_PASSWORD'] = 'admin'
 
+message_list = []
+
 #SuperZbazowanaBaza#GS
 
 #łaczymy sie username,password zapisanymi w global variables
@@ -37,6 +39,7 @@ def get_from_database_by_name(db_connection,cur,text):
     pass
 @app.route('/', methods=['POST','GET'])
 def index():
+
     #inicjalizacja kursora do pobierania danych z db
     db_connection = get_db_connection()
     cur = db_connection.cursor()
@@ -74,3 +77,21 @@ def login():
         else:
             loggedIN = "wrong credentials"
     return render_template('login.html',loggedIN=loggedIN)
+
+
+@app.route('/chat', methods=['POST', 'GET'])
+def chat():
+    # inicjalizacja kursora do pobierania danych z db
+
+
+    # wysyłamy strone przy ładowaniu
+    if request.method == "GET":
+        print("zgetowano mnie bo poczułem cos we mnie")
+    # odpowiedz na klika "Get student's data"
+
+    if request.method == "POST":
+        text = request.form['text']
+        print(text)
+    return render_template('index2.html')
+
+

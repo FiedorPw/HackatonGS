@@ -132,9 +132,18 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control text-" placeholder="Enter a prompt">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
+                        <form method="post" action="/chat">
+                                  <input type="text" class="form-control text-" placeholder="Enter a prompt" name="text">
+                                 <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>
+                             </form>
                     </div>
+
+{#                        <form method="post" action="/chat">#}
+{#                             <input type="text" class="form-control text-" placeholder="Enter a prompt" name="text">#}
+{#                             <button class="btn btn-outline-secondary"  type="submit" value="Login" id="button-addon2">Submit</button>#}
+{#                         </form>#}
+
+
                 </div>
             </div>
         </div>
