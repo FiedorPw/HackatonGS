@@ -47,7 +47,8 @@ def upload_file():
     files.append(file)
     new_files = []
     [new_files.append(file) for file in files if file not in new_files]
-    return jsonify({'file': file})
+    files = new_files
+    return jsonify(success=True)
 
 @app.route('/login')
 def login():
