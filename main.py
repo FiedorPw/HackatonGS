@@ -53,7 +53,7 @@ def index():
     if request.method == "POST":
         text = request.form['text']
         wyszukana_osoba = get_from_database_by_name(db_connection,cur,text)
-    return render_template('index.html', students=students, wyszukana_osoba=wyszukana_osoba)
+    return render_template('index2.html', students=students, wyszukana_osoba=wyszukana_osoba)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -73,4 +73,4 @@ def login():
             return redirect(url_for('index'))
         else:
             loggedIN = "wrong credentials"
-    return render_template('login2.html',loggedIN=loggedIN)
+    return render_template('login.html',loggedIN=loggedIN)
