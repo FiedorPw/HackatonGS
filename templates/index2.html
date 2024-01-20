@@ -165,7 +165,7 @@
             const message = $("#message-input").val();
             if(message != "")
             {
-              $.post('/send_message',{message: message }, function(){
+              $.post('/send_message',{message: message}, function(){
               $("#message-input").val('');
               fetchMessages();
             
