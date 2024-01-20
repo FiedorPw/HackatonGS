@@ -1,4 +1,3 @@
-from distutils.command import upload
 from flask import Flask, jsonify, request, render_template
 import requests
 import logging
@@ -52,6 +51,11 @@ def upload_file():
 def login():
     logger.info('Detected sign in attempt')
     return render_template('login.html')
+
+@app.route('/about')
+def about():
+    logger.info('Detected about page request')
+    return render_template('about.html')
 
 if __name__ == '__main__':
     if not os.path.exists('uploads'):
