@@ -41,11 +41,10 @@ def get_files():
 
 @app.route('/upload_file', methods=['POST'])
 def upload_file():
-    file = request.files['file']
-    logger.info(f'Received user file: {file.filename}')
-    file.save(os.path.join('uploads', file.filename))
-    files.append(file.filename)
-    return jsonify(success=True)
+    file = request.form['message']
+    logger.info(f'Received user file: {file}')
+    files.append(file)
+    return jsonify({'file': file})
 
 @app.route('/login')
 def login():
