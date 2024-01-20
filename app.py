@@ -1,4 +1,3 @@
-from distutils.command import upload
 from flask import Flask, jsonify, request, render_template
 import requests
 import logging
