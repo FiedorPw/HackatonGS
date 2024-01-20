@@ -36,16 +36,16 @@ def send_message():
     messages.append(response.json()['message'])
     return jsonify(success=True)
 
-@app.route('/get_files')
-def get_files():
-    return jsonify(files)
-
 @app.route('/upload_file', methods=['POST'])
 def upload_file():
     file = request.form['message']
     logger.info(f'Received user file: {file}')
     files.append(file)
     return jsonify(success=True)
+
+@app.route('/get_files')
+def get_files():
+    return jsonify(files)
 
 @app.route('/login')
 def login():
