@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Ones and Zeros AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- Custom Styles -->
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      .hero-section {
+        background: url('../static/about-bg.png') center center no-repeat;
+        background-size: cover;
+        color: white;
+        padding: 100px 0;
+      }
+      .about-content {
+        padding: 50px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Navbar -->
+    <nav
+    class="navbar navbar-expand-lg bg-body-tertiary justify-content-between"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="../static/logo.png"
+          width="50"
+          height="50"
+          class="d-inline-block align-items-center"
+          alt=""
+        />
+        <strong>1s & 0s Chat</strong>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li> -->
+          <!-- <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+          <div class="nav-item mb-2 mb-lg-0">
+            <div class="input-group w-auto align-center">
+              <input type="file" class="form-control" id="inputFile" />
+            </div>
+          </div>
+          <span class="navbar-text mx-0 mx-lg-4"
+            >Hello, <strong>admin</strong>!</span
+          >
+          <a class="btn btn-primary" href="/login" role="button"
+            >Sign in</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+      <div class="container">
+        <h1 class="display-4">About Ones and Zeros AI</h1>
+        <p class="lead">Discover the story behind our innovative platform.</p>
+      </div>
+    </section>
+
+    <!-- About Content -->
+     <!-- About Content -->
+     <section class="about-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Our Mission</h2>
+              <p>At Ones and Zeros AI, we strive to push the boundaries of artificial intelligence, making it more accessible, intuitive, and beneficial for everyone. Our mission is to build innovative solutions that solve real-world problems, empower individuals, and drive business success. We believe in leveraging the power of AI to create a brighter, smarter future for all.</p>
+              <p>Our platform is the culmination of relentless research, cutting-edge technology, and user-centric design. We focus on delivering seamless experiences that enhance productivity, foster creativity, and unlock new possibilities. Join us on this exciting journey as we explore the limitless potential of AI.</p>
+            </div>
+            <div class="col-md-6">
+              <img src="../static/image.png" alt="Our Mission" class="img-fluid rounded">
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <img src="../static/image2.png" 
+              alt="Our Team" 
+              class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+              <h2>Our Team</h2>
+              <p>Our team is the backbone of Ones and Zeros AI, a diverse group of passionate professionals from various corners of the world. We are researchers who explore uncharted territories, engineers who build robust systems, designers who craft delightful experiences, and thinkers who challenge the status quo. Together, we are on a mission to make AI not just more intelligent, but also more humane and ethical.</p>
+              <p>We pride ourselves on our collaborative culture, where innovation thrives, and ideas become reality. Our team's dedication, creativity, and expertise are what make our platform truly unique and powerful. We invite you to meet the minds behind Ones and Zeros AI and join us in shaping the future of technology.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

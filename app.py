@@ -53,6 +53,11 @@ def login():
     logger.info('Detected sign in attempt')
     return render_template('login.html')
 
+@app.route('/about')
+def about():
+    logger.info('Detected about page request')
+    return render_template('about.html')
+
 if __name__ == '__main__':
     if not os.path.exists('uploads'):
         os.mkdir('uploads')
