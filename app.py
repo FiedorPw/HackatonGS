@@ -18,11 +18,11 @@ def get_messages():
 def send_message():
     messages.clear()
     message = request.form['message']
-    messages.append(message)
     print("request: " + str(request))
     response = requests.post('http://localhost:8000/assistant/', json={'user_id' : 1, 'message': message})
     print(response.json())
     messages.append(response.json()['message'])
+    print(messages)
     return jsonify(success=True)
 
 if __name__ == '__main__':

@@ -146,15 +146,11 @@
       <script
   src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script>
-    let lastMessageLength = 0;
-
     function fetchMessages() {
-        $.getJSON('/get_messages', function(data) {
-            if (data.length !== lastMessageLength) {
-                const newMessages = data.slice(lastMessageLength);
-                $('#message-container').append('<div class="d-flex justify-content-start"><div class="shadow p-3 mt-4 bg-body-tertiary rounded"><img src="../static/logo.png" width="30" height="30" class="align-items-center me-2" alt="">' + newMessages[newMessages.length - 1] + '</div></div>');
-                lastMessageLength = data.length;
-            }
+        $.getJSON('/get_messages', function(data) {  
+                console.log(data);
+                const newMessage = data.toString()
+                $('#message-container').append('<div class="d-flex justify-content-start"><div class="shadow p-3 mt-4 bg-body-tertiary rounded"><img src="../static/logo.png" width="30" height="30" class="align-items-center me-2" alt="">' + newMessage + '</div></div>');
         });
     }
 
