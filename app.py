@@ -20,6 +20,7 @@ logger.addHandler(ch)
 @app.route('/')
 def index():
     messages.clear()
+    files.clear()
     return render_template('index2.html')
 
 @app.route('/get_messages')
