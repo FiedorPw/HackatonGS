@@ -45,9 +45,6 @@ def upload_file():
     file = request.form['message']
     logger.info(f'Received user file: {file}')
     files.append(file)
-    new_files = []
-    [new_files.append(file) for file in files if file not in new_files]
-    files = new_files
     return jsonify(success=True)
 
 @app.route('/login')
