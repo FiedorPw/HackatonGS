@@ -60,4 +60,4 @@ def about():
 if __name__ == '__main__':
     if not os.path.exists('uploads'):
         os.mkdir('uploads')
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=80)
